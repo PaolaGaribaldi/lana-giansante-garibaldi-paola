@@ -32,7 +32,7 @@ body #pages {
   position: fixed;
   bottom: 50px;
   right: 50px;
-  height: 150px;
+  height: 200px;
   width: 20px;
 }
 body #pages p {
@@ -100,19 +100,49 @@ body #oeuvres {
   height: 98vh;
   padding: 1vh 1vw;
   width: 98%;
-}
-body #oeuvres .contact_o {
-  background: #000;
-  width: 146px;
-  height: 42.281px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #FFF;
-  text-decoration: none;
+}
+body #oeuvres .contact_o {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   font-family: "poppins";
+  text-decoration: none;
+}
+body #oeuvres .contact_o:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  z-index: -2;
+}
+body #oeuvres .contact_o:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #450303;
+  transition: all 0.3s;
+  z-index: -1;
+}
+body #oeuvres .contact_o:hover {
+  color: #fff;
+}
+body #oeuvres .contact_o:hover:before {
+  width: 100%;
 }
 body #oeuvres .row_tab {
   height: 50vh;
@@ -231,4 +261,72 @@ body #about div .contact_l {
 body #about div p {
   font-family: "poppins";
   color: #000;
+}
+body footer {
+  background-color: #000;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
+  width: 100%;
+}
+body footer p {
+  color: #fff;
+  font-family: "poppins";
+  text-align: justify;
+}
+body footer a {
+  color: #fff;
+  font-family: "poppins";
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1600px) {
+  #oeuvres #le_reve, #oeuvres #autoportrait {
+    width: 60% !important;
+  }
+}
+@media screen and (max-width: 1300px) {
+  #oeuvres {
+    height: 180vh !important;
+  }
+  #oeuvres .row_tab {
+    align-items: center !important;
+    justify-content: center !important;
+    height: 90vh !important;
+  }
+  #oeuvres #le_reve {
+    flex-direction: column !important;
+  }
+  #oeuvres #autoportrait {
+    flex-direction: column-reverse !important;
+  }
+  #story {
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  #oeuvres {
+    height: 180vh !important;
+  }
+  #oeuvres .row_tab {
+    align-items: center !important;
+    justify-content: center !important;
+    height: 90vh !important;
+  }
+  #oeuvres #description_1 p, #oeuvres #description_2 p {
+    font-size: 20px !important;
+  }
+  #oeuvres #le_reve {
+    flex-direction: column !important;
+  }
+  #oeuvres #le_reve p {
+    font-size: 20px !important;
+  }
+  #oeuvres #autoportrait {
+    flex-direction: column-reverse !important;
+  }
+  #story {
+    font-size: 16px !important;
+  }
 }/*# sourceMappingURL=st.css.map */

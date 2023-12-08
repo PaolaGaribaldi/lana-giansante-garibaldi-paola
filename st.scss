@@ -28,7 +28,7 @@ body{
         position: fixed;
         bottom: 50px;
         right: 50px;
-        height: 150px;
+        height: 200px;
         width: 20px;
         p {
             color: #000000;
@@ -100,18 +100,49 @@ body{
         height: 98vh;
         padding: 1vh 1vw;
         width: 98%;
-        .contact_o{
-            background: #000;
-            width: 146px;
-            height: 42.281px;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #FFF;
-            text-decoration: none;
-            font-family: 'poppins';
+        $color: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        .contact_o {
+          display: inline-block;
+          padding: .75rem 1.25rem;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 1rem;
+          letter-spacing: .15rem;
+          transition: all .3s;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          font-family: "poppins";
+          text-decoration: none;
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color;
+            z-index: -2;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #450303;
+            transition: all .3s;
+            z-index: -1;
+          }
+          &:hover {
+            color: #fff;
+            &:before {
+              width: 100%;
+            }
+          }
         }
         .row_tab{
             height: 50vh;
@@ -234,5 +265,77 @@ body{
                 color: #000;
             }
         }
+    }
+    footer{
+        background-color: #000;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-evenly;
+        width: 100%;
+        p{
+            color: #fff;
+            font-family: 'poppins';
+            text-align:justify;
+        }
+        a{
+            color: #fff;
+            font-family: 'poppins';
+            text-decoration: none;
+        }
+    }
+}
+@media screen and (max-width:1600px) {
+    #oeuvres{
+        #le_reve , #autoportrait{
+            width: 60% !important;
+        }
+    }
+}
+@media screen and (max-width:1300px) {
+    #oeuvres{
+        height: 180vh !important;
+        .row_tab{
+            align-items: center !important;
+            justify-content: center !important;
+            height: 90vh !important;
+        }
+        #le_reve{
+            flex-direction: column !important;
+
+        }
+        #autoportrait{
+            flex-direction: column-reverse !important;
+        }
+    }
+    #story{
+        font-size: 16px !important;
+    }
+}
+@media screen and (max-width:400px) {
+    #oeuvres{
+        height: 180vh !important;
+        .row_tab{
+            align-items: center !important;
+            justify-content: center !important;
+            height: 90vh !important;
+        }
+        #description_1,#description_2{
+            p{
+                font-size: 20px !important;
+            }
+        }
+        #le_reve{
+            flex-direction: column !important;
+            p{
+                font-size: 20px !important;
+            }
+        }
+        #autoportrait{
+            flex-direction: column-reverse !important;
+        }
+    }
+    #story{
+        font-size: 16px !important;
     }
 }
